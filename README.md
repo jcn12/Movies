@@ -1,6 +1,6 @@
 # Movies
 
-Simple nodejs app for using expressjs with sequelize package.
+Simple nodejs website for using expressjs with sequelize package.
 
 ## How to use
 
