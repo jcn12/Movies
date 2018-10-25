@@ -1,0 +1,19 @@
+mixin post-card(movie)
+  .col-md-3
+    .post.mx-md-2.my-md-4.border
+      a(href='/Movie/' + movie.id)
+        img.card-img-bottom.img-fluid(src=movie.cover, alt=movie.title, data-toggle="tooltip" data-placement="top" title=movie.title)
+        p.m-2=movie.title
+
+
+-var index
+.container-fluid.px-5
+  .page.mt-4.mx-auto
+    .row
+      -for (var i = 0;i < 20;i++)
+        - index = (currentPage - 1) * 20 + i
+        -if (index >= totalItems)
+          -break
+        +post-card(movies[index])
+    include pagination
+

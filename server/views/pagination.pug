@@ -1,0 +1,54 @@
+- var i = 1
+
+- if (totalPages > 2)
+    .page-switcher.float-right(aria-label='Page switcher')
+        ul.pagination
+            - if(totalPages < 10)
+                - while (i <= totalPages)
+                    -if (currentPage == i)
+                        li.page-item.active
+                            span.page-link=i++
+                                span.sr-only (current)
+                    -else
+                        li.page-item
+                            a.page-link(href=currentUrl + '?page=' + i)=i++
+            - else
+                - if (currentPage == 1)
+                    li.page-item.active
+                        span.page-link 1
+                            span.sr-only (current)
+                - else
+                    li.page-item
+                        a.page-link(href=currentUrl + '?page=1') 1
+
+                - i = currentPage - 3
+
+                -if(i > 2)
+                    li.page-item
+                        p.page-link ...
+                - else
+                    - i = 2
+                - var maxShow = i + 7
+                -if (maxShow >= totalPages)
+                    -maxShow = totalPages - 1
+                - while (i <= maxShow)
+                    -if (currentPage == i)
+                        li.page-item.active
+                            span.page-link=i++
+                                span.sr-only (current)
+
+                    -else
+                        li.page-item
+                            a.page-link(href=currentUrl + '?page=' + i)=i++
+
+                -if(i < totalPages)
+                    li.page-item
+                        p.page-link ...
+
+                - if (currentPage == totalPages)
+                    li.page-item.active
+                        span.page-link=totalPages
+                            span.sr-only (current)
+                - else
+                    li.page-item
+                        a.page-link(href=currentUrl + '?page=' + totalPages)=totalPages

@@ -1,0 +1,13 @@
+body{
+  background-color: #EEEEED;
+}
+
+.post{
+   margin-bottom: 2rem !important;
+    background-color:#ffffff;
+}
+
+.movie{
+    padding:0.5rem 0 !important;
+    background-color:#ffffff;
+}

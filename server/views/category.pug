@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .container
+    .my-md-4.mx-auto.w-auto
+      h1.display-4.mb-md-4.text-capitalize #{title}
+      .list-inline
+        each d in data
+          .list-inline-item
+            .bg-info.rounded.bg.p-1.my-2.pr-2
+              a.text-justify.mx-2.text-light(href=d.url, data-toggle='tooltip', data-placement='bottom', title=d.name)=d.name
+              span.badge.badge-light=d.count

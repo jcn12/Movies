@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-sm.navbar-light.bg-light
+    a.navbar-brand(href='/') Movies
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+            li.nav-item.active
+                a.nav-link(href='/Genre') Genre
+            li.nav-item.active
+                a.nav-link(href='/Director') Director
+            li.nav-item.active
+                a.nav-link(href='/Writer') Writer
+            li.nav-item.active
+                a.nav-link(href='/Cast') Cast
+        form.form-inline.my-2.my-md-8
+            input.form-control.mr-sm-2(placeholder='Search', aria-label='Search', type='Search')

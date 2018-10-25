@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .container
+    form.my-4.form-inline(method='post', enctype='multipart/form-data', action='Update')
+      .custom-file.mr-4.col
+        input.custom-file-input#filetoupload(type='file',name='filetoupload')
+        label.custom-file-label(for='filetoupload') Choose file...
+      button.btn.btn-primary.my-2(type='submit') Submit
+
+    -if(movie)
+      p=success
+      .container
+        include movie_content
+
+  script(type='text/javascript').
+    $('.custom-file-input').on('change',function () {
+      let filename = $(this).val().split('\\').pop();
+      $(this).siblings('.custom-file-label').addClass('selected').html(filename);
+    });

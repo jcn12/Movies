@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .container
+    .text-center.mx-auto.my-md-4
+      h1.display-4 #{message}
+      h1=error.status
+      p.btn.btn-primary(data-toggle='collapse', href='#stack', role='button' aria-expanded='false', aria-controlls='stack') See more
+      .collapse(id='stack')
+        pre.card.card-body.text-left #{error.stack}

@@ -1,0 +1,33 @@
+mixin table-row(key,value,link)
+  tr
+    td.font-weight-bold.text-right.text-nowrap=key
+    -if (link == null)
+      td=value
+    -else
+      td
+        a(href=link)=value
+
+mixin table-rows(tag,data)
+  tr
+    td.font-weight-bold.text-right.text-nowrap=tag
+    td.list-inline
+      each val in data
+        a.list-inline-item(href=val.url)=val.name
+
+h4.row.my-4=movie.title
+.row.movie
+  .col-lg-8
+    img.mt-2.img-fluid(src=movie.cover)
+  .col-lg-4.mt-2
+    table.table.table-sm.table-borderless
+      tbody
+        +table-row('Air Date: ',movie.air_date,null)
+        +table-row('Rating: ',movie.rating,null)
+        -if (movie.directors && movie.directors.length)
+          +table-rows('Director: ',movie.directors)
+        -if (movie.writers && movie.writers.length)
+          +table-rows('Writer: ',movie.writers)
+        -if (movie.genres && movie.genres.length)
+          +table-rows('Genre: ',movie.genres)
+        -if (movie.casts && movie.casts.length)
+          +table-rows('Stars: ',movie.casts)

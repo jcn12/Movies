@@ -1,0 +1,17 @@
+{
+  "development": {
+    "storage":"resource/movie_db_dev.db",
+    "dialect": "sqlite",
+    "operatorsAliases": false
+  },
+  "test": {
+    "storage":"resource/movie_db_test.db",
+    "dialect": "sqlite",
+    "operatorsAliases": false
+  },
+  "production": {
+    "storage":"resource/movie_db.db",
+    "dialect": "sqlite",
+    "operatorsAliases": false
+  }
+}
